@@ -44,8 +44,8 @@
             txt.val('');
          });
 
-         socket.on('new message', function(data){
-            chatArea.append('<div class="well">'+data.message+'</div>');
+         socket.on('nouveau poid', function(data){
+            chatArea.append('<div class="well">nouveau poid :'+data.poid+'</div>');
          });
       });
    </script>
