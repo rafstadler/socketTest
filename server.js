@@ -46,3 +46,8 @@ app.post('/angle',(req,res)=>{
 app.get('/', (req, res) => {
    res.sendFile(__dirname + '/index.html');
 });
+
+app.get('/proute', (req, res) => {
+    console.log("proute");
+   res.json({success:"ok"});
+});
