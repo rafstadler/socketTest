@@ -49,5 +49,6 @@ app.get('/', (req, res) => {
 
 app.get('/proute', (req, res) => {
     console.log("proute");
+    io.sockets.emit('nouveau poid', {poid: 15});
    res.json({success:"ok"});
 });
