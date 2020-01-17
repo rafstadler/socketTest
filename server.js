@@ -45,13 +45,13 @@ io.sockets.on('connection',(socket) => {
 
 app.get('/poid',(req,res)=>{
     console.log(req.query.value);
-    io.sockets.emit('nouveau poid', {poid: req.body.value});
+    io.sockets.emit('nouveau poid', {poid: req.query.value});
     res.json({success:"ok"});
 });
 
 app.get('/angle',(req,res)=>{
     console.log(req.query.value);
-    io.sockets.emit('nouvel angle', {angle: req.body.value});
+    io.sockets.emit('nouvel angle', {angle: req.query.value});
     res.json({success:"ok"});
 });
 
