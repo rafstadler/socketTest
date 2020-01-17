@@ -33,7 +33,7 @@
     
         <script>
       jQuery(document).ready(function() {
-         var socket = io.connect('ec2-13-58-107-162.us-east-2.compute.amazonaws.com:4001');
+         var socket = io.connect('ec2-18-219-67-255.us-east-2.compute.amazonaws.com:4001');
          var form = jQuery('#myForm');
          var txt = jQuery('#txt');
          var chatArea = jQuery('#chatArea');
@@ -46,6 +46,10 @@
 
          socket.on('nouveau poid', function(data){
             chatArea.append('<div class="well">nouveau poid :'+data.poid+'</div>');
+         });
+          
+          socket.on('nouvel angle', function(data){
+            chatArea.append('<div class="well">nouvel angle :'+data.angle+'</div>');
          });
       });
    </script>

@@ -31,24 +31,30 @@ io.sockets.on('connection',(socket) => {
 });
 
 
-app.post('/poid',(req,res)=>{
-    console.log(req.body.value);
+//app.post('/poid',(req,res)=>{
+//    console.log(req.body.value);
+//    io.sockets.emit('nouveau poid', {poid: req.body.value});
+//    res.json({success:"ok"});
+//});
+//
+//app.post('/angle',(req,res)=>{
+//    console.log(req.body.value);
+//    io.sockets.emit('nouvel angle', {angle: req.body.value});
+//    res.json({success:"ok"});
+//});
+
+app.get('/poid',(req,res)=>{
+    console.log(req.query.value);
     io.sockets.emit('nouveau poid', {poid: req.body.value});
     res.json({success:"ok"});
 });
 
-app.post('/angle',(req,res)=>{
-    console.log(req.body.value);
+app.get('/angle',(req,res)=>{
+    console.log(req.query.value);
     io.sockets.emit('nouvel angle', {angle: req.body.value});
     res.json({success:"ok"});
 });
 
 app.get('/', (req, res) => {
    res.sendFile(__dirname + '/index.html');
-});
-
-app.get('/proute', (req, res) => {
-    console.log("proute");
-    io.sockets.emit('nouveau poid', {poid: 15});
-   res.json({success:"ok"});
 });
