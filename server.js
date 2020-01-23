@@ -6,7 +6,7 @@ import bodyParser from 'body-parser';
 const app = express();
 const server = require('http').createServer(app);
 const io = require('socket.io').listen(server);
-const PORT = 80;
+const PORT = 4001;
 server.listen(PORT);
 console.log('Server is running');
 
